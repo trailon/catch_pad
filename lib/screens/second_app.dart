@@ -5,6 +5,13 @@ class SecondApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return SafeArea(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark(),
+        home: const Scaffold(),
+      ),
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-class FirstScreenAppBar extends StatelessWidget with PreferredSizeWidget{
+
+class FirstScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FirstScreenAppBar({Key? key}) : super(key: key);
 
   @override
@@ -7,15 +8,15 @@ class FirstScreenAppBar extends StatelessWidget with PreferredSizeWidget{
     return PreferredSize(
       preferredSize: preferredSize,
       child: AppBar(
-        actions: [
-          const Spacer(),
-          IconButton(
-              onPressed: () {}, icon: const Icon(Icons.filter_alt_rounded))
-        ],
+        title:
+            InkWell(onTap: () {
+              // Opens Filters Screen
+            }, child: const Icon(Icons.filter_alt_rounded)),
+        centerTitle: true,
       ),
     );
   }
-  
+
   @override
-  Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight / 2);
 }

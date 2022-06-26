@@ -1,3 +1,5 @@
+import 'package:catch_pad/screens/first_app.dart';
+import 'package:catch_pad/screens/second_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,30 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
+      title: 'CatchPad',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       home: Row(
-        children: [
-          Expanded(
-            child: MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-              home: const Text('Flutter Demo Home Page'),
-            ),
-          ),
-          Expanded(
-            child: MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-              home: const Text('Flutter Demo Home Page'),
-            ),
-          ),
+        children: const [
+          // 2 Seperated Material Apps is called in one
+          Expanded(child: FirstApp()),
+          Expanded(child: SecondApp()),
         ],
       ),
     );

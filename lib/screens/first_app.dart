@@ -6,9 +6,15 @@ class FirstApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const FirstScreenAppBar(),
-      body: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+    return SafeArea(
+      child: MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData.dark(),
+          home: Scaffold(
+            appBar: const FirstScreenAppBar(),
+            body: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+          )),
     );
   }
 }
