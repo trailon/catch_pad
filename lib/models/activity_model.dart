@@ -2,10 +2,10 @@ class ActivityModel {
   String? activity;
   String? type;
   int? participants;
-  double? price;
+  num? price;
   String? link;
   String? key;
-  double? accessibility;
+  num? accessibility;
 
   ActivityModel(
       {this.activity,
@@ -27,14 +27,14 @@ class ActivityModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['activity'] = this.activity;
-    data['type'] = this.type;
-    data['participants'] = this.participants;
-    data['price'] = this.price;
-    data['link'] = this.link;
-    data['key'] = this.key;
-    data['accessibility'] = this.accessibility;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['activity'] = activity;
+    data['type'] = type;
+    data['participants'] = participants;
+    data['price'] = price;
+    data['link'] = link;
+    data['key'] = key;
+    data['accessibility'] = accessibility;
     return data;
   }
 }

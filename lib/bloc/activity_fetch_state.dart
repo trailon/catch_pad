@@ -13,8 +13,8 @@ class ActivityFetchInitial extends ActivityFetchState {}
 class ActivityFetchLoading extends ActivityFetchState {}
 
 class ActivityFetchLoaded extends ActivityFetchState {
-  final ActivityModel activityModel;
-  const ActivityFetchLoaded(this.activityModel);
+  final ActivityModel activity;
+  const ActivityFetchLoaded(this.activity);
 }
 
 class ActivityFetchError extends ActivityFetchState {

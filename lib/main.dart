@@ -1,24 +1,42 @@
+import 'dart:async';
+
+import 'package:catch_pad/models/activity_model.dart';
 import 'package:catch_pad/screens/first_app.dart';
 import 'package:catch_pad/screens/second_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final StreamController<ActivityModel> streamController =
+      StreamController.broadcast();
+  List<ActivityModel> favoriteActivities = [];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CatchPad',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: Row(
-        children: const [
-          // 2 Seperated Material Apps is called in one
-          Expanded(child: FirstApp()),
-          Expanded(child: SecondApp()),
+      home: Row(      // 2 Seperated Material Apps is called in one
+        children: [
+          Expanded(
+              child: FirstApp(
+            streamController: streamController,
+          )),
+          StreamBuilder<ActivityModel>(
+              stream: streamController.stream,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  favoriteActivities.add(snapshot.data!);
+                }
+                return Expanded(
+                    child: SecondApp(
+                  favoriteActivities: favoriteActivities,
+                ));
+              }),
         ],
       ),
     );
