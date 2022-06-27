@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:catch_pad/constants/texts.dart';
 import 'package:catch_pad/constants/urls.dart';
 import 'package:catch_pad/cubit/url_cubit_cubit.dart';

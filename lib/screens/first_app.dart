@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:async';
 
 import 'package:catch_pad/cubit/url_cubit_cubit.dart';
@@ -18,7 +20,7 @@ class FirstApp extends StatelessWidget {
           home: BlocProvider(
             create: (context) => UrlCubit(),
             child: Scaffold(
-              appBar: FirstScreenAppBar(),
+              appBar: const FirstScreenAppBar(),
               body: FirstAppBodyProvider(streamController: streamController),
             ),
           )),

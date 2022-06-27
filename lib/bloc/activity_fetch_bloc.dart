@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
 import 'package:catch_pad/api/requests.dart';
 import 'package:catch_pad/constants/texts.dart';

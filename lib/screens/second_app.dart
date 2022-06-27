@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:catch_pad/constants/activity_widget.dart';
 import 'package:catch_pad/models/activity_model.dart';
 import 'package:flutter/material.dart';
