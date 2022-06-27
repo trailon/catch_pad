@@ -25,16 +25,4 @@ class ActivityModel {
     key = json['key'];
     accessibility = json['accessibility'];
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['activity'] = activity;
-    data['type'] = type;
-    data['participants'] = participants;
-    data['price'] = price;
-    data['link'] = link;
-    data['key'] = key;
-    data['accessibility'] = accessibility;
-    return data;
-  }
 }
