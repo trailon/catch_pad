@@ -14,19 +14,9 @@ class FilterDialog extends StatefulWidget {
 
 class _FilterDialogState extends State<FilterDialog> {
   int selectedValue = 0;
-  List<String> types = [
-    "education",
-    "recreational",
-    "social",
-    "diy",
-    "charity",
-    "cooking",
-    "relaxation",
-    "music",
-    "busywork"
-  ];
+  List<String> types = Strings.typeList;
   bool isWarnVisible = false;
-  String selectedType = "education";
+  String selectedType = Strings.initialType;
   int selectedParticipant = 1;
   List<int> participants = [1, 2, 3, 4, 5];
   TextEditingController minPriceController = TextEditingController();
@@ -53,9 +43,9 @@ class _FilterDialogState extends State<FilterDialog> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  myRadioListTile(0, "Type"),
-                  myRadioListTile(1, "Participants"),
-                  myRadioListTile(2, "Price")
+                  myRadioListTile(0, Strings.type),
+                  myRadioListTile(1, Strings.participants),
+                  myRadioListTile(2, Strings.price)
                 ],
               ),
               if (selectedValue == 0)
@@ -137,8 +127,8 @@ class _FilterDialogState extends State<FilterDialog> {
                   ],
                 )
               else
-                const Align(
-                    alignment: Alignment.center, child: Text("No Filter"))
+               Align(
+                    alignment: Alignment.center, child: Text(Strings.noFilter))
             ],
           )),
     );

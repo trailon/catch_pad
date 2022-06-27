@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:catch_pad/constants/texts.dart';
 import 'package:catch_pad/models/activity_model.dart';
 import 'package:catch_pad/screens/first_app.dart';
 import 'package:catch_pad/screens/second_app.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CatchPad',
+      title: Strings.appTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Row(      // 2 Seperated Material Apps is called in one

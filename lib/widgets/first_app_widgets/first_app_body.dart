@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:catch_pad/bloc/activity_fetch_bloc.dart';
+import 'package:catch_pad/constants/texts.dart';
 import 'package:catch_pad/cubit/url_cubit_cubit.dart';
 import 'package:catch_pad/models/activity_model.dart';
 import 'package:catch_pad/widgets/first_app_widgets/activity_list.dart';
@@ -45,7 +46,7 @@ class FirstAppBody extends StatelessWidget {
           BlocBuilder<ActivityFetchBloc, ActivityFetchState>(
               builder: (_, state) {
             if (state is ActivityFetchInitial) {
-              return const Text("There is no Activity");
+              return Text(Strings.noActivity);
             }
             // In loading state show all the current activities and a proggress indicatior at the bottom of the listview
             else if (state is ActivityFetchLoading) {
@@ -69,7 +70,7 @@ class FirstAppBody extends StatelessWidget {
                 Text(state.message!)
               ]));
             } else {
-              return const Text("There is no connection");
+              return Text(Strings.noConnection);
             }
           }),
         ],
