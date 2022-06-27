@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           StreamBuilder<ActivityModel>(
               stream: streamController.stream,
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
+                if (snapshot.hasData && !favoriteActivities.contains(snapshot.data)) {
                   favoriteActivities.add(snapshot.data!);
                 }
                 return Expanded(

@@ -1,29 +1,21 @@
-import 'dart:math';
-
+import 'package:catch_pad/constants/activity_widget.dart';
 import 'package:catch_pad/models/activity_model.dart';
 import 'package:flutter/material.dart';
 
 class SecondApp extends StatelessWidget {
-  SecondApp({Key? key, this.activity,required this.favoriteActivities}) : super(key: key);
-  ActivityModel? activity;
+  SecondApp({Key? key, required this.favoriteActivities})
+      : super(key: key);
   List<ActivityModel> favoriteActivities;
   @override
   Widget build(BuildContext context) {
-    /* if (activity != null && !favoriteActivities.contains(activity)) {
-      favoriteActivities.add(activity!);
-    } */
     return SafeArea(
       child: MaterialApp(
-        title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark(),
+        theme: ThemeData.light(),
         home: Scaffold(
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          body: ListView(
             children: favoriteActivities.map((favActivity) {
-              return Card(
-                  child:
-                      ListTile(title: Text(favActivity.activity.toString())));
+              return ActivityCard(activity: favActivity);
             }).toList(),
           ),
         ),

@@ -8,4 +8,7 @@ abstract class ActivityFetchEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchActivity extends ActivityFetchEvent{}
+class FetchActivity extends ActivityFetchEvent {
+  FetchActivity(this.currentUrl);
+  String currentUrl;
+}
